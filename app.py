@@ -44,13 +44,13 @@ class Emprendimientos(db.Model):
 @app.route('/registro', methods=['GET','POST'])
 def registro():
     print("DFKJAJSBFDHBAHDFHJABHFDBAFDKAJFSDHVAKF")
-    if request.method == 'GET':
+    if request.method == 'POST':
         print(request.form)
-        nombre_emp = request.form['username']
+        nombre_emp = request.form['nombre']
         descripcion = request.form['about']
-        nombre = request.form['nombre']
+        nombre = request.form['nombre/s']
         apellido = request.form['apellido']
-        contacto = request.form['numero']
+        contacto = request.form['numero_de_telefono']
         direccion = request.form['direccion']
         ciudad = request.form['ciudad']
         latitud = request.form['latitud']
