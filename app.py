@@ -28,8 +28,10 @@ class Emprendimientos(db.Model):
   ciudad = db.Column(db.String(10), nullable=False)
   latitud = db.Column(db.Float(200), nullable=False)
   longitud = db.Column(db.Float(200), nullable=False)
+  correo = db.Column(db.String(200), nullable=False)
+  contrasenha = db.Column(db.String(80), nullable=False)
 
-  def __init__(self, nombre_emp, descripcion, nombre, apellido, contacto, direccion, ciudad, latitud, longitud):
+  def __init__(self, nombre_emp, descripcion, nombre, apellido, contacto, direccion, ciudad, latitud, longitud, correo, contrasenha):
     self.nombre_emp = nombre_emp
     self.descripcion = descripcion
     self.nombre = nombre
@@ -39,7 +41,8 @@ class Emprendimientos(db.Model):
     self.ciudad = ciudad
     self.latitud = latitud
     self.longitud = longitud
-    
+    self.correo = correo
+    self.contrasenha = contrasenha
 
 @app.route('/registro', methods=['GET','POST'])
 def registro():
@@ -55,8 +58,11 @@ def registro():
         ciudad = request.form['ciudad']
         latitud = request.form['latitud']
         longitud = request.form['longitud']
+        correo = request.form['correo']
+        contrasenha = request.form['contrasenha']
 
-        emprendimientos = Emprendimientos(nombre_emp, descripcion, nombre, apellido, contacto, direccion, ciudad, latitud, longitud)
+
+        emprendimientos = Emprendimientos(nombre_emp, descripcion, nombre, apellido, contacto, direccion, ciudad, latitud, longitud, correo, contrasenha)
         db.session.add(emprendimientos)
         db.session.commit()
 

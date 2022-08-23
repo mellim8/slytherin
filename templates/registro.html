@@ -76,33 +76,50 @@
                 <div class="mt-1 flex rounded-md shadow-sm">
                   <input type="text" name="nombre" id="nombre" autocomplete="nombre" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md rounded-r-md sm:text-sm border-gray-300">
                 </div>
-        
-                <div class="sm:col-span-6">
-                  <label for="descripcion" class="block text-sm font-medium text-gray-700"> Descripcion </label>
-                  <div class="mt-1">
-                    <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md"></textarea>
-                  </div>
-                  <p class="mt-2 text-sm text-gray-500">Describa brevemente el producto que ofrece.</p>
+              </div>
+      
+              <div class="sm:col-span-6">
+                <label for="descripcion" class="block text-sm font-medium text-gray-700"> Descripcion </label>
+                <div class="mt-1">
+                  <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md"></textarea>
                 </div>
                 <p class="mt-2 text-sm text-gray-500">Describa brevemente el producto que ofrece.</p>
-
               </div>
             </div>
-        
-            <div class="pt-8">
-              <div>
-                <h3 class="text-lg leading-6 font-medium text-gray-900">Informacion Personal</h3>
-                <p class="mt-1 text-sm text-gray-500">Esta informacion sera utilizada para que otras emprendedoras como tu puedan contactar contigo y conoceran la ubicacion exacta de tu emprendimiento.</p>
+          </div>
+      
+          <div class="pt-8">
+            <div>
+              <h3 class="text-lg leading-6 font-medium text-gray-900">Informacion Personal</h3>
+              <p class="mt-1 text-sm text-gray-500">Esta informacion sera utilizada para que otras emprendedoras como tu puedan contactar contigo y conoceran la ubicacion exacta de tu emprendimiento.</p>
+            </div>
+            <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+              <div class="sm:col-span-3">
+                <label for="nombre" class="block text-sm font-medium text-gray-700"> Nombre/s </label>
+                <div class="mt-1">
+                  <input type="text" name="nombre/s" id="nombre/s" autocomplete="given-name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                </div>
               </div>
-
       
               <div class="sm:col-span-3">
                 <label for="apellido" class="block text-sm font-medium text-gray-700"> Apellido/s </label>
                 <div class="mt-1">
-                  <input type="text" name="apellido" id="apellido" autocomplete="family-name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                  <input type="text" name="correo" id="correo" autocomplete="correo" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                 </div>
               </div>
-      
+              <div class="sm:col-span-2">
+                <label for="correo" class="block text-sm font-medium text-gray-700">Correo</label>
+                <div class="mt-1">
+                  <input type="text" name="correo" id="correo" autocomplete="correo" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                </div>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="contrasenha" class="block text-sm font-medium text-gray-700">Contraseña</label>
+                <div class="mt-1">
+                  <input type="text" name="contrasenha" id="contrasenha" autocomplete="contrasenha" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                </div>
+              </div>
+            </div>
               <div class="sm:col-span-4">
                 <label for="numero_de_telefono" class="block text-sm font-medium text-gray-700">Numero de telefono/whatsapp </label>
                 <div class="mt-1">
@@ -117,39 +134,32 @@
                 <div class="mt-1">
                   <input type="text" name="direccion" id="direccion" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                 </div>
-        
-                </div>
-        
-                <div class="sm:col-span-6">
-                  <label for="direccion" class="block text-sm font-medium text-gray-700"> Direccion/calle </label>
-                  <div class="mt-1">
-                    <input type="text" name="direccion/calle" id="direccion/calle" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
-                  </div>
-                </div>
-        
-                <div class="sm:col-span-2">
-                  <label for="ciudad" class="block text-sm font-medium text-gray-700"> Ciudad </label>
-                  <div class="mt-1">
-                    <input type="text" name="ciudad" id="ciudad" autocomplete="address-level2" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
-                  </div>
-                </div>
-        
-                <div class="sm:col-span-2">
-                  <label for="latitud" class="block text-sm font-medium text-gray-700">Latitud </label>
-                  <div class="mt-1">
-                    <input type="text" name="latitud" id="latitud" autocomplete="latitud" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
-                  </div>
-                </div>
-                <div class="sm:col-span-2">
-                  <label for="longitud" class="block text-sm font-medium text-gray-700">Longitud </label>
-                  <div class="mt-1">
-                    <input type="text" name="longitud" id="longitud" autocomplete="longitud" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
-                  </div>
+              </div>
+      
+              <div class="sm:col-span-2">
+                <label for="ciudad" class="block text-sm font-medium text-gray-700"> Ciudad </label>
+                <div class="mt-1">
+                  <input type="text" name="ciudad" id="ciudad" autocomplete="address-level2" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                 </div>
               </div>
+      
+              <div class="sm:col-span-2">
+                <label for="latitud" class="block text-sm font-medium text-gray-700">Latitud </label>
+                <div class="mt-1">
+                  <input type="text" name="latitud" id="latitud" autocomplete="latitud" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                </div>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="longitud" class="block text-sm font-medium text-gray-700">Longitud </label>
+                <div class="mt-1">
+                  <input type="text" name="longitud" id="longitud" autocomplete="longitud" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                </div>
             </div>
-        
-            
+          </div>
+        </div>
+      
+          
+      </div>
 
           <div id="map"></div>
 
