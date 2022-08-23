@@ -4,9 +4,10 @@ import folium
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database/db.sqlite3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+db = SQLAlchemy(app)
 
 @app.route("/")
 def index():
@@ -42,7 +43,9 @@ class Emprendimientos(db.Model):
 
 @app.route('/registro', methods=['GET','POST'])
 def registro():
-    if request.method == 'POST':
+    print("DFKJAJSBFDHBAHDFHJABHFDBAFDKAJFSDHVAKF")
+    if request.method == 'GET':
+        print(request.form)
         nombre_emp = request.form['username']
         descripcion = request.form['about']
         nombre = request.form['nombre']
@@ -88,10 +91,6 @@ def mapa():
 
     return lugar_del_emprendimiento._repr_html_()
 
-    
-@app.route("/Alianza")
-def alianza():
-    pass
 
 if __name__ =='__main__':
     app.run(debug=True)
