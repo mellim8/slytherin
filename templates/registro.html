@@ -201,22 +201,20 @@
       maxZoom: 19,
       attribution: '© OpenStreetMap'
     }).addTo(map);
-
     var marker = null;
     map.on('click', function(e){
       if (marker !== null){
         map.removeLayer(marker)
       }
-      var lat = e.latLng.lat;
+      var lat = e.latlng.lat;
       document.getElementById('latitud').value = lat;
 
-      var lng = e.latLng.lng;
+      var lng = e.latlng.lng;
       document.getElementById('longitud').value = lng;
 
       marker = L.marker([lat, lng]).addTo(map);
     });
-</script> 
-</body>
+</script>
 <footer class="bg-purple-800 grid grid-cols-3">
   <p></p>
   <a class="text-purple-200 mx-32" href="https://penguin.academy/dl/Principal"
@@ -224,4 +222,5 @@
   >
   <p></p>
 </footer>
+</body>
 </html>
