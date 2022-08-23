@@ -6,6 +6,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+
 @app.route("/")
 def index():
     return render_template ("index.html")
@@ -75,8 +76,17 @@ def emprendimientos():
 # 	return redirect(url_for('emprendimientos'))						##y luego hace un redireccionamiento a la URL de emprendimiento 
 
 
+@app.route("/Mapa")
+def mapa():
+    popup = '<b> Nombre del emprendimiento </b>'
 
+    lugar_del_emprendimiento = folium.Map(location=[-25.300894456479014, -57.58135401902809],zoom_start=16)
+
+    folium.Marker(location=[-25.300894456479014, -57.58135401902809],popup = popup).add_to(lugar_del_emprendimiento)
+
+    return lugar_del_emprendimiento._repr_html_()
 
 
 if __name__ =='app':
+    app.run(debug=True)
     db.create_all()
