@@ -19,28 +19,39 @@
           >
             <img src="../static/logoaa.png" alt="logo" width="50" />
           </a>
-          <div class="hidden ml-10 space-x-8 lg:block">
-            <a
-              href="#"
-              class="text-base font-medium text-1xl text-purple-200 hover:text-purple-300"
-            >
-              Promociones
-            </a>
-
-            <a
-              href="#"
-              class="text-base font-medium text-1xl text-purple-200 hover:text-purple-300"
-            >
-              Mapa
-            </a>
-          </div>
-        </div>
-        <div class="ml-10 space-x-4">
-          <a
-            href="/registro"
-            class="text-1xl inline-block bg-purple-200 py-2 px-4 border border-transparent rounded-md text-base font-medium text-purple-800 hover:bg-opacity-75"
-            >Registrarse</a
-          >
+          <div class="grid grid-cols-3">
+            <div class="hidden ml-10 space-x-8 lg:block mt-3">
+              <a
+                href="#"
+                class="text-base font-medium text-1xl text-purple-200 hover:text-purple-300"
+              >
+                Promociones
+              </a>
+              <a
+                href="#"
+                class="text-base font-medium text-1xl text-purple-200 hover:text-purple-300"
+              >
+                Mapa
+              </a>
+            </div>
+            <form class="grid grid-cols-2 mx-6 space-x-8">
+              <input type="text" name="usuario" id="usuario" class="flex-1 focus:ring-purple-500 focus:border-purple-500 block w-full min-w-0 rounded-md sm:text-sm border-purple-30 bg-purple-50" placeholder="  Usuario">
+              <input type="text" name="contraseña" id="contraseña" class="flex-1 focus:ring-purple-500 focus:border-purple-500 block w-full min-w-0 rounded-md sm:text-sm border-purple-300 bg-purple-50" placeholder="  Contraseña">
+            </form>
+            <div class="mx-12 items-end">
+              <div>
+                <a
+                href="#"
+                class=" text-1xl inline-block bg-purple-200 py-2 px-4 mr-4 border border-transparent rounded-md text-base font-medium text-purple-800 hover:bg-opacity-75"
+                >Iniciar Sesión</a
+              >
+                <a
+                  href="#"
+                  class="text-1xl inline-block bg-purple-200 py-2 px-4 border border-transparent rounded-md text-base font-medium text-purple-800 hover:bg-opacity-75"
+                  >Registrarse</a
+                >
+              </div>
+            </div>
         </div>
       </div>
     </nav>
