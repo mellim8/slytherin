@@ -1,6 +1,6 @@
-# Documentación preliminar de NOMBRE
+# Documentación preliminar de WIAR
 
-## **Descripción de NOMBRE**
+## **Descripción de WIAR**
 
 Descripcion:
 Buscamos entrelazar "conectar" a varias emprendedoras para poder ayudarse mutuamente en lo que respecta de sus proyectos, trabajos, servicios y todo lo
