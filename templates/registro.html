@@ -4,24 +4,191 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" 
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" 
+    crossorigin=""/>
+    <style>
+      #map{height: 400px; width: 400px; margin-left: 10cm;}
+    </style>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" 
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" 
+    crossorigin=""></script>
+    
     <title>Registro</title>
 </head>
-<body>
-  <form action="method post">
-    <label for="nombre">Nombre del emprendimiento:</label>
-    <input type="text" id="nombre" name="nombre">
-    <label for="descripcion">Rubro:</label>
-    <input type="text" id="descripcion" name="descripcion">  
-    <label for="contacto">Contacto:</label>
-    <input type="int" id="contacto" name="contacto">
-    <label for="latitud">Latitud:</label>
-    <input type="float" id="latitus" name="latitud">
-    <label for="longitud">Longitud:</label>
-    <input type="float" id="longitud" name="longitud">
-    <input type="submit" value = "Registrarse">
+<header class="bg-purple-800">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
+    <div
+      class="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none"
+    >
+      <div class="flex items-center">
+        <a
+          class="text-center text-purple-200"
+          href="http://www.ciudadmujer.gov.py/"
+        >
+          <img src="../static/logoaa.png" alt="logo" width="50" />
+        </a>
+        <div class="hidden ml-10 space-x-8 lg:block">
+          <a
+            href="#"
+            class="text-base font-medium text-1xl text-purple-200 hover:text-purple-300"
+          >
+            Promociones
+          </a>
 
-  </form>
+          <a
+            href="#"
+            class="text-base font-medium text-1xl text-purple-200 hover:text-purple-300"
+          >
+            Mapa
+          </a>
+        </div>
+      </div>
+      <div class="ml-10 space-x-4">
+        <a
+          href="http://127.0.0.1:5000/"
+          class="text-1xl inline-block bg-purple-200 py-2 px-4 border border-transparent rounded-md text-base font-medium text-purple-800 hover:bg-opacity-75"
+          >Inicio</a
+        >
+      </div>
+    </div>
+  </nav>
+</header>
+<body class=" bg-fuchsia-100">
+<div class="px-36 py-9">
+<form class="space-y-8 divide-y divide-gray-200" action="/registro" method="POST" >
+  <div class="space-y-8 divide-y divide-gray-200">
+    <div>
+      <div>
+        <h3 class="text-lg leading-6 font-medium text-gray-900">Registro de Emprendimiento</h3>
+        <p class="mt-1 text-sm text-gray-500">Esta informacion sera visible para todos los usuarios, no comparta informacion sensible.</p>
+      </div>
+      <div class="m-6">
+        <div class="space-y-8 divide-y divide-gray-200">
+          <div>
+      
+            <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+              <div class="sm:col-span-4">
+                <label for="nombre_de_emprendimiento" class="block text-sm font-medium text-gray-700">Nombre del Emprendimiento </label>
+                <div class="mt-1 flex rounded-md shadow-sm">
+                  <input type="text" name="nombre" id="nombre" autocomplete="nombre" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md rounded-r-md sm:text-sm border-gray-300">
+                </div>
+              </div>
+      
+              <div class="sm:col-span-6">
+                <label for="descripcion" class="block text-sm font-medium text-gray-700"> Descripcion </label>
+                <div class="mt-1">
+                  <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md"></textarea>
+                </div>
+                <p class="mt-2 text-sm text-gray-500">Describa brevemente el producto que ofrece.</p>
+              </div>
+            </div>
+          </div>
+      
+          <div class="pt-8">
+            <div>
+              <h3 class="text-lg leading-6 font-medium text-gray-900">Informacion Personal</h3>
+              <p class="mt-1 text-sm text-gray-500">Esta informacion sera utilizada para que otras emprendedoras como tu puedan contactar contigo y conoceran la ubicacion exacta de tu emprendimiento.</p>
+            </div>
+            <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+              <div class="sm:col-span-3">
+                <label for="nombre" class="block text-sm font-medium text-gray-700"> Nombre/s </label>
+                <div class="mt-1">
+                  <input type="text" name="nombre/s" id="nombre/s" autocomplete="given-name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                </div>
+              </div>
+      
+              <div class="sm:col-span-3">
+                <label for="apellido" class="block text-sm font-medium text-gray-700"> Apellido/s </label>
+                <div class="mt-1">
+                  <input type="text" name="apellido" id="apellido" autocomplete="family-name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                </div>
+              </div>
+      
+              <div class="sm:col-span-4">
+                <label for="numero_de_telefono" class="block text-sm font-medium text-gray-700">Numero de telefono/whatsapp </label>
+                <div class="mt-1">
+                  <input id="numero_de_telefono" name="numero_de_telefono" type="text" autocomplete="numero_de_telefono" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                </div>
+              </div>
+      
+              </div>
+      
+              <div class="sm:col-span-6">
+                <label for="direccion" class="block text-sm font-medium text-gray-700"> Direccion/calle </label>
+                <div class="mt-1">
+                  <input type="text" name="direccion" id="direccion" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                </div>
+              </div>
+      
+              <div class="sm:col-span-2">
+                <label for="ciudad" class="block text-sm font-medium text-gray-700"> Ciudad </label>
+                <div class="mt-1">
+                  <input type="text" name="ciudad" id="ciudad" autocomplete="address-level2" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                </div>
+              </div>
+      
+              <div class="sm:col-span-2">
+                <label for="latitud" class="block text-sm font-medium text-gray-700">Latitud </label>
+                <div class="mt-1">
+                  <input type="text" name="latitud" id="latitud" autocomplete="latitud" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                </div>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="longitud" class="block text-sm font-medium text-gray-700">Longitud </label>
+                <div class="mt-1">
+                  <input type="text" name="longitud" id="longitud" autocomplete="longitud" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          
+        </div>
 
-  
+        <div id="map"></div>
+
+        <div class="pt-5">
+          <div class="flex justify-end">
+            <a href="http://127.0.0.1:5000/" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" >Cancelar</a>
+            <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">Guardar</button>
+          </div>
+        </div>
+      </div>
+</form>
+
+<div>
+  <script> 
+      var map = L.map('map').setView([-25.300894456479014, -57.58135401902809], 16); 
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
+      {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+      }).addTo(map);
+      var marker = null;
+      map.on('click', function(e){
+        if (marker !== null){
+          map.removeLayer(marker)
+        }
+        var lat = e.latlng.lat;
+        document.getElementById('latitud').value = lat;
+
+        var lng = e.latlng.lng;
+        document.getElementById('longitud').value = lng;
+
+        marker = L.marker([lat, lng]).addTo(map);
+      });
+  </script>
+</div>
+<footer class="bg-purple-800 grid grid-cols-3">
+  <p></p>
+  <a class="text-purple-200 mx-32" href="https://penguin.academy/dl/Principal"
+    >Penguin Academy🐧</a
+  >
+  <p></p>
+</footer>
 </body>
 </html>
