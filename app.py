@@ -52,7 +52,7 @@ def registro():
         ciudad = request.form['ciudad']
         latitud = request.form['latitud']
         longitud = request.form['longitud']
-        
+
         emprendimientos = Emprendimientos(nombre_emp, descripcion, nombre, apellido, contacto, direccion, ciudad, latitud, longitud)
         db.session.add(emprendimientos)
         db.session.commit()
