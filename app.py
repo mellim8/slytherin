@@ -15,50 +15,50 @@ def index():
 db = SQLAlchemy(app) ##Creamos una variable que nos permite hacer consulta a la base de datos
 
 class Emprendimientos(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    nombre_del_emprendimiento = db.Column(db.String(80), unique=True, nullable=False)
-    encargada = db.Column(db.String(200), nullable=False)
-    correo = db.Column(db.String(10), nullable=False)
-    contacto = db.Column(db.Float(200), nullable=False)
-    latitud = db.Column(db.Float(200), nullable=False)
-    longitud = db.Column(db.Float(200), nullable=False)
-    ciudad = db.Column(db.String(10), nullable=False)
-    servicio_o_producto = db.Column(db.String(200), nullable=False)
-    rubro = db.Column(db.String(200), nullable=False)
-    descripcion = db.Column(db.String(500), nullable=False)
+#   __tablename__= "Registo de Emprendedoras"
+  id = db.Column(db.Integer, primary_key=True)
+  nombre_emp = db.Column(db.String(80), unique=True, nullable=False)
+  descripcion = db.Column(db.String(200), nullable=False)
+#   foto = db.Colum
+  nombre = db.Column(db.String(80), nullable=False)
+  apellido = db.Column(db.String(80), nullable=False)
+  contacto = db.Column(db.String(10), nullable=False)
+  direccion = db.Column(db.String(200), nullable=False)
+  ciudad = db.Column(db.String(10), nullable=False)
+  latitud = db.Column(db.Float(200), nullable=False)
+  longitud = db.Column(db.Float(200), nullable=False)
 
-    def __init__(self, nombre_del_emprendimiento, encargada, correo, contacto, latitud, longitud, ciudad,   servicio_o_producto, rubro,descripcion):
-        self.nombre_del_emprendimiento = nombre_del_emprendimiento
-        self.encargada = encargada
-        self.correo = correo
-        self.contacto = contacto
-        self.latitud = latitud
-        self.longitud = longitud
-        self.ciudad = ciudad
-        self.servicio_o_producto = servicio_o_producto
-        self.rubro = rubro
-        self.descripcion = descripcion
+  def __init__(self, nombre_emp, descripcion, nombre, apellido, contacto, direccion, ciudad, latitud, longitud):
+    self.nombre_emp = nombre_emp
+    self.descripcion = descripcion
+    self.nombre = nombre
+    self.apellido = apellido
+    self.contacto = contacto
+    self.direccion = direccion
+    self.ciudad = ciudad
+    self.latitud = latitud
+    self.longitud = longitud
+    
 
-@app.route('/registro', methods=['GET', 'POST'])
+@app.route('/registro', methods=['GET','POST'])
 def registro():
     if request.method == 'POST':
-        nombre_del_emprendimiento = request.form['nombre_del_emprendimiento']
-        encargada = request.form['encargada']
-        correo = request.form ['correo']
-        contacto = request.form['contacto']
+        nombre_emp = request.form['username']
+        descripcion = request.form['about']
+        nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        contacto = request.form['numero']
+        direccion = request.form['direccion']
+        ciudad = request.form['ciudad']
         latitud = request.form['latitud']
         longitud = request.form['longitud']
-        ciudad = request.form['ciudad']
-        servicio_o_producto = request.form['servicio_o_producto']
-        rubro = request.form['rubro']
-        descripcion = request.form['descripcion']
 
-        emprendimiento = Emprendimientos (nombre_del_emprendimiento, encargada, correo, contacto, latitud, longitud, ciudad,  servicio_o_producto, rubro, descripcion)      ##creamos una variable u objeto
-        db.session.add(emprendimiento) 		##por medio del session.add agarramos el objeto emprendimiento
-        db.session.commit(emprendimiento)	## y luego commiteamos para que se aguarde en la base de datos
- 
-    return render_template('registro.html')		
+        emprendimientos = Emprendimientos(nombre_emp, descripcion, nombre, apellido, contacto, direccion, ciudad, latitud, longitud)
+        db.session.add(emprendimientos)
+        db.session.commit()
 
+    return render_template('registro.html')
+    
     #luego creamos una ruta para enlistar los emprendimientos
 @app.route ('/emprendimientos')
 def emprendimientos():
@@ -77,6 +77,7 @@ def emprendimientos():
 # 	return redirect(url_for('emprendimientos'))						##y luego hace un redireccionamiento a la URL de emprendimiento 
 
 
+
 @app.route("/Mapa")
 def mapa():
     popup = '<b> Nombre del emprendimiento </b>'
@@ -87,7 +88,11 @@ def mapa():
 
     return lugar_del_emprendimiento._repr_html_()
 
+    
+@app.route("/Alianza")
+def alianza():
+    pass
 
-if __name__ =='app':
+if __name__ =='__main__':
     app.run(debug=True)
     db.create_all()
