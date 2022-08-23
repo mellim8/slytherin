@@ -19,7 +19,7 @@ class Emprendimientos(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   nombre_emp = db.Column(db.String(80), unique=True, nullable=False)
   descripcion = db.Column(db.String(200), nullable=False)
-  foto = db.Colum
+#   foto = db.Colum
   nombre = db.Column(db.String(80), nullable=False)
   apellido = db.Column(db.String(80), nullable=False)
   contacto = db.Column(db.String(10), nullable=False)
@@ -45,18 +45,14 @@ def registro():
     if request.method == 'POST':
         nombre_emp = request.form['username']
         descripcion = request.form['about']
-        nombre = request.form['first-name']
-        apellido = request.form['last-name']
-        contacto = request.form['email']
-        direccion = request.form['street-address']
-        ciudad = request.form['city']
+        nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        contacto = request.form['numero']
+        direccion = request.form['direccion']
+        ciudad = request.form['ciudad']
         latitud = request.form['latitud']
         longitud = request.form['longitud']
-        ciudad = request.form['ciudad']
-        servicio_o_producto = request.form['servicio_o_producto']
-        rubro = request.form['rubro']
-        descripcion = request.form['descripcion']
-
+        
         emprendimientos = Emprendimientos(nombre_emp, descripcion, nombre, apellido, contacto, direccion, ciudad, latitud, longitud)
         db.session.add(emprendimientos)
         db.session.commit()
