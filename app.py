@@ -91,6 +91,10 @@ def mapa():
 
     return lugar_del_emprendimiento._repr_html_()
 
+@app.route("/alianza")
+def alianza():
+    return render_template ("alianza.html")
+
 
 if __name__ =='__main__':
     app.run(debug=True)

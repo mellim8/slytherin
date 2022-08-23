@@ -5,12 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" 
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" 
+    crossorigin=""/>
     <style>
       #map{height: 400px; width: 400px;}
     </style>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" 
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" 
+    crossorigin=""></script>
+    
     <title>Registro</title>
 </head>
 <header class="bg-purple-800">
@@ -66,14 +71,14 @@
       
             <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
               <div class="sm:col-span-4">
-                <label for="username" class="block text-sm font-medium text-gray-700">Nombre del Emprendimiento </label>
+                <label for="nombre_de_emprendimiento" class="block text-sm font-medium text-gray-700">Nombre del Emprendimiento </label>
                 <div class="mt-1 flex rounded-md shadow-sm">
-                  <input type="text" name="username" id="username" autocomplete="username" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md rounded-r-md sm:text-sm border-gray-300">
+                  <input type="text" name="nombre" id="nombre" autocomplete="nombre" class="flex-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full min-w-0 rounded-md rounded-r-md sm:text-sm border-gray-300">
                 </div>
               </div>
       
               <div class="sm:col-span-6">
-                <label for="about" class="block text-sm font-medium text-gray-700"> Descripcion </label>
+                <label for="descripcion" class="block text-sm font-medium text-gray-700"> Descripcion </label>
                 <div class="mt-1">
                   <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md"></textarea>
                 </div>
@@ -81,7 +86,7 @@
               </div>
       
               <div class="sm:col-span-6">
-                <label for="photo" class="block text-sm font-medium text-gray-700"> Fotos </label>
+                <label for="foto" class="block text-sm font-medium text-gray-700"> Fotos </label>
                 <div class="mt-1 flex items-center">
                   <span class="h-12 w-12 rounded-full overflow-hidden bg-gray-100">
                     <svg class="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
@@ -93,16 +98,16 @@
               </div>
       
               <div class="sm:col-span-6">
-                <label for="cover-photo" class="block text-sm font-medium text-gray-700">Agregar archivos (opcional) </label>
+                <label for="agregar_archivos" class="block text-sm font-medium text-gray-700">Agregar archivos (opcional) </label>
                 <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                   <div class="space-y-1 text-center">
                     <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
                       <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <div class="flex text-sm text-gray-600">
-                      <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-purple-700 hover:text-purple-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-purple-700">
+                      <label for="seleccionar_archivo" class="relative cursor-pointer bg-white rounded-md font-medium text-purple-700 hover:text-purple-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-purple-700">
                         <span>Seleccionar archivo</span>
-                        <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                        <input id="seleccionar_archivo" name="seleccionar_archivo" type="file" class="sr-only">
                       </label>
                       <p class="pl-1">O arrastrar y soltar</p>
                     </div>
@@ -122,21 +127,21 @@
               <div class="sm:col-span-3">
                 <label for="nombre" class="block text-sm font-medium text-gray-700"> Nombre/s </label>
                 <div class="mt-1">
-                  <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                  <input type="text" name="nombre/s" id="nombre/s" autocomplete="given-name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                 </div>
               </div>
       
               <div class="sm:col-span-3">
                 <label for="apellido" class="block text-sm font-medium text-gray-700"> Apellido/s </label>
                 <div class="mt-1">
-                  <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                  <input type="text" name="apellido/s" id="apellido/s" autocomplete="family-name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                 </div>
               </div>
       
               <div class="sm:col-span-4">
                 <label for="numero" class="block text-sm font-medium text-gray-700">Numero de telefono/whatsapp </label>
                 <div class="mt-1">
-                  <input id="email" name="email" type="email" autocomplete="email" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                  <input id="numero_de_telefono" name="numero_de_telefono" type="email" autocomplete="email" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                 </div>
               </div>
       
@@ -145,27 +150,27 @@
               <div class="sm:col-span-6">
                 <label for="direccion" class="block text-sm font-medium text-gray-700"> Direccion/calle </label>
                 <div class="mt-1">
-                  <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                  <input type="text" name="direccion/calle" id="direccion/calle" autocomplete="street-address" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                 </div>
               </div>
       
               <div class="sm:col-span-2">
                 <label for="ciudad" class="block text-sm font-medium text-gray-700"> Ciudad </label>
                 <div class="mt-1">
-                  <input type="text" name="city" id="city" autocomplete="address-level2" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                  <input type="text" name="ciudad" id="ciudad" autocomplete="address-level2" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                 </div>
               </div>
       
               <div class="sm:col-span-2">
                 <label for="latitud" class="block text-sm font-medium text-gray-700">Latitud </label>
                 <div class="mt-1">
-                  <input type="text" name="region" id="region" autocomplete="address-level1" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                  <input type="text" name="latitud" id="latitud" autocomplete="latitud" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                 </div>
               </div>
               <div class="sm:col-span-2">
                 <label for="longitud" class="block text-sm font-medium text-gray-700">Longitud </label>
                 <div class="mt-1">
-                  <input type="text" name="region" id="region" autocomplete="address-level1" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                  <input type="text" name="longitud" id="longitud" autocomplete="longitud" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                 </div>
               </div>
             </div>
@@ -173,7 +178,9 @@
       
           
         </div>
+
         <div id="map"></div>
+
         <div class="pt-5">
           <div class="flex justify-end">
             <button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancelar</button>
@@ -181,25 +188,31 @@
           </div>
         </div>
       </div>
-      </div>
-    </div>
 
-  </div>
-</form>
-</div>
+
+
 <script> 
-  var map = L.map('map').setView([-25.300894456479014, -57.58135401902809], 16); 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '© OpenStreetMap'
-  }).addTo(map);
-  map.on("click", function(e){
-  var latitud = L.latLng.lat;
+    var map = L.map('map').setView([-25.300894456479014, -57.58135401902809], 16); 
 
-  var longitud = L.latLng.lng;
-  });
-</script> 
-</body>
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
+    {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+    var marker = null;
+    map.on('click', function(e){
+      if (marker !== null){
+        map.removeLayer(marker)
+      }
+      var lat = e.latlng.lat;
+      document.getElementById('latitud').value = lat;
+
+      var lng = e.latlng.lng;
+      document.getElementById('longitud').value = lng;
+
+      marker = L.marker([lat, lng]).addTo(map);
+    });
+</script>
 <footer class="bg-purple-800 grid grid-cols-3">
   <p></p>
   <a class="text-purple-200 mx-32" href="https://penguin.academy/dl/Principal"
@@ -207,4 +220,5 @@
   >
   <p></p>
 </footer>
+</body>
 </html>
