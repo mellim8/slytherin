@@ -2,7 +2,9 @@
 
 ## **Descripción de NOMBRE**
 
-Escribir una descripción  
+Descripcion:
+Buscamos entrelazar "conectar" a varias emprendedoras para poder ayudarse mutuamente en lo que respecta de sus proyectos, trabajos, servicios y todo lo
+que las pueda unir, a mas de una, ser una red de apoyo para alcanzar sus metas y poder superarse de forma unida, demostrar de nosotras las mujeres no estamos solas y podemos trabajar en conjunto. 
 
 ## **Tecnologías utilizadas para el desarrollo del proyecto:**
 - Flask
