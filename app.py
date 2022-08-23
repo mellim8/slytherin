@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+import folium
 
 app = Flask(__name__)
 
@@ -52,3 +53,13 @@ def registro():
 if __name__ =='__main__':
     app.run(debug=True)
     db.create_all()
+
+@app.route("/Mapa")
+def mapa():
+    popup = '<b> Nombre del emprendimiento </b>'
+
+    lugar_del_emprendimiento = folium.Map(location=[-25.300894456479014, -57.58135401902809],zoom_start=16)
+
+    folium.Marker(location=[-25.300894456479014, -57.58135401902809],popup = popup).add_to(lugar_del_emprendimiento)
+
+    return lugar_del_emprendimiento._repr_html_()
