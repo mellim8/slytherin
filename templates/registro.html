@@ -5,12 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" 
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" 
+    crossorigin=""/>
     <style>
       #map{height: 400px; width: 400px;}
     </style>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" 
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" 
+    crossorigin=""></script>
+    
     <title>Registro</title>
 </head>
 <header class="bg-purple-800">
@@ -160,13 +165,13 @@
               <div class="sm:col-span-2">
                 <label for="latitud" class="block text-sm font-medium text-gray-700">Latitud </label>
                 <div class="mt-1">
-                  <input type="text" name="region" id="region" autocomplete="address-level1" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                  <input type="text" name="latitud" id="latitud" autocomplete="latitud" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                 </div>
               </div>
               <div class="sm:col-span-2">
                 <label for="longitud" class="block text-sm font-medium text-gray-700">Longitud </label>
                 <div class="mt-1">
-                  <input type="text" name="region" id="region" autocomplete="address-level1" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                  <input type="text" name="longitud" id="longitud" autocomplete="longitud" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                 </div>
               </div>
             </div>
@@ -174,7 +179,9 @@
       
           
         </div>
+
         <div id="map"></div>
+
         <div class="pt-5">
           <div class="flex justify-end">
             <button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Cancelar</button>
@@ -183,25 +190,31 @@
         </div>
       </form>
       </div>
-      </div>
-    </div>
 
-  </div>
-</form>
-</div>
+
+
 <script> 
-  var map = L.map('map').setView([-25.300894456479014, -57.58135401902809], 16); 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '© OpenStreetMap'
-  }).addTo(map);
-  map.on("click", function(e){
-  var latitud = L.latLng.lat;
+    var map = L.map('map').setView([-25.300894456479014, -57.58135401902809], 16); 
 
-  var longitud = L.latLng.lng;
-  });
-</script> 
-</body>
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
+    {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+    var marker = null;
+    map.on('click', function(e){
+      if (marker !== null){
+        map.removeLayer(marker)
+      }
+      var lat = e.latlng.lat;
+      document.getElementById('latitud').value = lat;
+
+      var lng = e.latlng.lng;
+      document.getElementById('longitud').value = lng;
+
+      marker = L.marker([lat, lng]).addTo(map);
+    });
+</script>
 <footer class="bg-purple-800 grid grid-cols-3">
   <p></p>
   <a class="text-purple-200 mx-32" href="https://penguin.academy/dl/Principal"
@@ -209,4 +222,5 @@
   >
   <p></p>
 </footer>
+</body>
 </html>
