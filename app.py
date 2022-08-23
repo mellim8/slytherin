@@ -34,10 +34,6 @@ def _init_(self, nombre, descripcion, contacto, lat, lon):
 def registro():
 	return render_template('registro.html')
 
-if __name__ =='__main__':
-    app.run(debug=True)
-    db.create_all()
-
 @app.route("/Mapa")
 def mapa():
     popup = '<b> Nombre del emprendimiento </b>'
@@ -47,3 +43,7 @@ def mapa():
     folium.Marker(location=[-25.300894456479014, -57.58135401902809],popup = popup).add_to(lugar_del_emprendimiento)
 
     return lugar_del_emprendimiento._repr_html_()
+
+if __name__ =='__main__':
+    app.run(debug=True)
+    db.create_all()
