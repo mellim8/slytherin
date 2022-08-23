@@ -18,18 +18,25 @@ def index():
 class Emprendimientos(db.Model):
 #   __tablename__= "Registo de Emprendedoras"
   id = db.Column(db.Integer, primary_key=True)
-  nombre = db.Column(db.String(80), unique=True, nullable=False)
-  testimonio = db.Column(db.String(200), nullable=False)
+  nombre_emp = db.Column(db.String(80), unique=True, nullable=False)
+  descripcion = db.Column(db.String(200), nullable=False)
+  foto = db.Colum
+  nombre = db.Column(db.String(80), nullable=False)
+  apellido = db.Column(db.String(80), nullable=False)
   contacto = db.Column(db.String(10), nullable=False)
-  rubro = db.Column(db.String(200), nullable=False)
+  direccion = db.Column(db.String(200), nullable=False)
+  ciudad = db.Column(db.String(10), nullable=False)
   latitud = db.Column(db.Float(200), nullable=False)
   longitud = db.Column(db.Float(200), nullable=False)
 
-  def __init__(self, nombre, testimonio, contacto, rubro, latitud, longitud):
+  def __init__(self, nombre_emp, descripcion, nombre, apellido, contacto, direccion, ciudad, latitud, longitud):
+    self.nombre_emp = nombre_emp
+    self.descripcion = descripcion
     self.nombre = nombre
-    self.testimonio = testimonio
+    self.apellido = apellido
     self.contacto = contacto
-    self.rubro = rubro
+    self.direccion = direccion
+    self.ciudad = ciudad
     self.latitud = latitud
     self.longitud = longitud
     
@@ -37,14 +44,17 @@ class Emprendimientos(db.Model):
 @app.route('/registro', methods=['GET','POST'])
 def registro():
     if request.method == 'POST':
-        nombre = request.form['nombre']
-        testimonio = request.form['testimonio']
-        contacto = request.form['contacto']
-        rubro = request.form['rubro']
+        nombre_emp = request.form['username']
+        descripcion = request.form['about']
+        nombre = request.form['first-name']
+        apellido = request.form['last-name']
+        contacto = request.form['email']
+        direccion = request.form['street-address']
+        ciudad = request.form['city']
         latitud = request.form['latitud']
         longitud = request.form['longitud']      
 
-        emprendimientos = Emprendimientos(nombre, testimonio, contacto, rubro, latitud, longitud)
+        emprendimientos = Emprendimientos(nombre_emp, descripcion, nombre, apellido, contacto, direccion, ciudad, latitud, longitud)
         db.session.add(emprendimientos)
         db.session.commit()
 
@@ -63,3 +73,8 @@ def mapa():
     folium.Marker(location=[-25.300894456479014, -57.58135401902809],popup = popup).add_to(lugar_del_emprendimiento)
 
     return lugar_del_emprendimiento._repr_html_()
+
+    
+@app.route("/Alianza")
+def alianza():
+
