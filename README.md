@@ -1,6 +1,6 @@
-# Documentación preliminar de WIAR
+# Documentación preliminar de IrũWeb
 
-## **Descripción de WIAR**
+## **Descripción de IrũWeb**
 
 Descripcion:
 Buscamos entrelazar "conectar" a varias emprendedoras para poder ayudarse mutuamente en lo que respecta de sus proyectos, trabajos, servicios y todo lo
