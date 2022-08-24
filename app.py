@@ -111,8 +111,9 @@ def mapa_belleza():
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
-                        <img src="logo-wasap.png" width="50" height="50">
+                        <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
+                    <a href="/crear_alianza">Crear una nueva Alianza</a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Belleza.html')
@@ -137,8 +138,9 @@ def mapa_Gastronomia():
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
-                        <img src="logo-wasap.png" width="50" height="50">
+                        <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
+                    <a></a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Gastronomia.html')
@@ -163,8 +165,9 @@ def mapa_Artesanias():
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
-                        <img src="logo-wasap.png" width="50" height="50">
+                        <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
+                    <a></a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Artesanias.html')
@@ -189,8 +192,9 @@ def mapa_Prendas_de_vestir():
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
-                        <img src="logo-wasap.png" width="50" height="50">
+                        <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
+                    <a></a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Prendas_de_vestir.html')
@@ -215,8 +219,9 @@ def mapa_Cuidado_de_ancianos():
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
-                        <img src="logo-wasap.png" width="50" height="50">
+                        <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
+                    <a></a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Cuidado_de_ancianos.html')
@@ -241,8 +246,9 @@ def mapa_Trabajo_domestico():
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
-                        <img src="logo-wasap.png" width="50" height="50">
+                        <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
+                    <a></a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Trabajo_domestico.html')
@@ -267,8 +273,9 @@ def mapa_Educacion():
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
                    <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
-                        <img src="logo-wasap.png" width="50" height="50">
+                        <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
+                    <a></a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Educacion.html')
@@ -293,8 +300,9 @@ def mapa_Cuidado_de_ninhos():
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
-                        <img src="logo-wasap.png" width="50" height="50">
+                        <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
+                    <a></a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Cuidado_de_ninhos.html')
@@ -319,8 +327,9 @@ def mapa_Decoracion():
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
-                        <img src="logo-wasap.png" width="50" height="50">
+                        <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
+                    <a></a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Decoracion.html')
@@ -345,8 +354,9 @@ def mapa_Floricultura():
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
-                        <img src="logo-wasap.png" width="50" height="50">
+                        <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
+                    <a></a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Floricultura.html')
