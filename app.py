@@ -52,10 +52,8 @@ class Emprendimientos(db.Model):
 
 @app.route('/registro', methods=['GET','POST'])
 def registro():
-    print("DFKJAJSBFDHBAHDFHJABHFDBAFDKAJFSDHVAKF")
     if request.method == 'POST':
-        print(request.form)
-        nombre_emp = request.form['nombre']
+        nombre_emp = request.form['nombre_emp']
         descripcion = request.form['about']
         nombre = request.form['nombre']
         apellido = request.form['apellido']
@@ -94,58 +92,245 @@ def emprendimientos():
 
 
 
-@app.route('/map')
-def mapa():
-    #Inicializamos el mapa 
-    # map= folium.Map(
-    #     location=[-25.360106678758992, -57.63123446013285],
-    #     zoom_start=13,
-    #     )
-    # cluster = MarkerCluster().add_to(map)
-    # mapa de datos
-    #variables de coordenadas
+@app.route('/Belleza')
+def mapa_belleza():
     coor_mapa = [-25.301379182412745, -57.58094636564712]
     coor_1 = [-25.301379182412745, -57.58094636564712]
 
 
     #creación del mapa
-    mapa = folium.Map(location=coor_mapa,zoom_start=12)
+    mapa = folium.Map(location=coor_mapa,zoom_start=18)
 
-    emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
+    # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
 
     emprendedoras = Emprendimientos.query.all()
     for emprendedora in emprendedoras:
-        folium.Marker(location=[emprendedora.latitud, emprendedora.longitud],
-        popup=f'''
-                <h2>{emprendedora.nombre}</h2>
-                <p>{emprendedora.descripcion}</p>
-                <p>celular:{emprendedora.contacto}</p>
-            ''').add_to(mapa)
+        if emprendedora.rubro =="Belleza":
+            folium.Marker(location=[emprendedora.latitud, emprendedora.longitud],
+            popup=f'''
+                    <h2>{emprendedora.nombre_emp} </h2>
+                    <p>{emprendedora.descripcion}</p>
+                    <p>celular:{emprendedora.contacto}</p>
+                ''').add_to(mapa)
 
-    # folium.Marker(
-    #     location=coor_1,
-    #     popup='''
-    #             <h2>Emprendedora A</h2>
-    #             <hr>
-    #             <img src="static/food.jpg" width="250px">
-    #             <p> La comida mas rica del mundo</p>
-    #             <h3>Servicios:</h3>
-    #                 <ul>
-    #                     <li>lomito, con carne.</li>
-    #                     <li>chipita, con cocido.</li>
-    #                 </ul>
-    #             <hr>
-    #                 <a href="#">whatsApp</a>
+    mapa.save('templates/Belleza.html')
+    return render_template('Belleza.html')
+
+@app.route('/Gastronomia')
+def mapa_Gastronomia():
+    coor_mapa = [-25.301379182412745, -57.58094636564712]
+    coor_1 = [-25.301379182412745, -57.58094636564712]
 
 
-    #             ''',
-    #     tooltip="Emprendedora A",
-    #     icon=emprenIcon
-    #     ).add_to(mapa)
-  #se puede usar despues de la ,Icom y dentro del html se puede hacer de todo,trabaja con "boostran"
-    #guardamos el mapa en un archivo html
-    mapa.save('templates/map.html')
-    return render_template('map.html')
+    #creación del mapa
+    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+
+    # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
+
+    emprendedoras = Emprendimientos.query.all()
+    for emprendedora in emprendedoras:
+        if emprendedora.rubro =="Gastronomia":
+            folium.Marker(location=[emprendedora.latitud, emprendedora.longitud],
+            popup=f'''
+                    <h2>{emprendedora.nombre_emp} </h2>
+                    <p>{emprendedora.descripcion}</p>
+                    <p>celular:{emprendedora.contacto}</p>
+                ''').add_to(mapa)
+
+    mapa.save('templates/Gastronomia.html')
+    return render_template('Gastronomia.html')
+
+@app.route('/Artesanias')
+def mapa_Artesanias():
+    coor_mapa = [-25.301379182412745, -57.58094636564712]
+    coor_1 = [-25.301379182412745, -57.58094636564712]
+
+
+    #creación del mapa
+    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+
+    # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
+
+    emprendedoras = Emprendimientos.query.all()
+    for emprendedora in emprendedoras:
+        if emprendedora.rubro =="Artesanias":
+            folium.Marker(location=[emprendedora.latitud, emprendedora.longitud],
+            popup=f'''
+                    <h2>{emprendedora.nombre_emp} </h2>
+                    <p>{emprendedora.descripcion}</p>
+                    <p>celular:{emprendedora.contacto}</p>
+                ''').add_to(mapa)
+
+    mapa.save('templates/Artesanias.html')
+    return render_template('Artesanias.html')
+
+@app.route('/Prendas_de_vestir')
+def mapa_Prendas_de_vestir():
+    coor_mapa = [-25.301379182412745, -57.58094636564712]
+    coor_1 = [-25.301379182412745, -57.58094636564712]
+
+
+    #creación del mapa
+    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+
+    # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
+
+    emprendedoras = Emprendimientos.query.all()
+    for emprendedora in emprendedoras:
+        if emprendedora.rubro =="Prendas_de_vestir":
+            folium.Marker(location=[emprendedora.latitud, emprendedora.longitud],
+            popup=f'''
+                    <h2>{emprendedora.nombre_emp} </h2>
+                    <p>{emprendedora.descripcion}</p>
+                    <p>celular:{emprendedora.contacto}</p>
+                ''').add_to(mapa)
+
+    mapa.save('templates/Prendas_de_vestir.html')
+    return render_template('Prendas_de_vestir.html')
+
+@app.route('/Cuidado_de_ancianos')
+def mapa_Cuidado_de_ancianos():
+    coor_mapa = [-25.301379182412745, -57.58094636564712]
+    coor_1 = [-25.301379182412745, -57.58094636564712]
+
+
+    #creación del mapa
+    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+
+    # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
+
+    emprendedoras = Emprendimientos.query.all()
+    for emprendedora in emprendedoras:
+        if emprendedora.rubro =="Cuidado_de_ancianos":
+            folium.Marker(location=[emprendedora.latitud, emprendedora.longitud],
+            popup=f'''
+                    <h2>{emprendedora.nombre_emp} </h2>
+                    <p>{emprendedora.descripcion}</p>
+                    <p>celular:{emprendedora.contacto}</p>
+                ''').add_to(mapa)
+
+    mapa.save('templates/Cuidado_de_ancianos.html')
+    return render_template('Cuidado_de_ancianos.html')
+
+@app.route('/Trabajo_domestico')
+def mapa_Trabajo_domestico():
+    coor_mapa = [-25.301379182412745, -57.58094636564712]
+    coor_1 = [-25.301379182412745, -57.58094636564712]
+
+
+    #creación del mapa
+    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+
+    # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
+
+    emprendedoras = Emprendimientos.query.all()
+    for emprendedora in emprendedoras:
+        if emprendedora.rubro =="Trabajo_domestico":
+            folium.Marker(location=[emprendedora.latitud, emprendedora.longitud],
+            popup=f'''
+                    <h2>{emprendedora.nombre_emp} </h2>
+                    <p>{emprendedora.descripcion}</p>
+                    <p>celular:{emprendedora.contacto}</p>
+                ''').add_to(mapa)
+
+    mapa.save('templates/Trabajo_domestico.html')
+    return render_template('Trabajo_domestico.html')
+
+@app.route('/Educacion')
+def mapa_Educacion():
+    coor_mapa = [-25.301379182412745, -57.58094636564712]
+    coor_1 = [-25.301379182412745, -57.58094636564712]
+
+
+    #creación del mapa
+    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+
+    # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
+
+    emprendedoras = Emprendimientos.query.all()
+    for emprendedora in emprendedoras:
+        if emprendedora.rubro =="Educacion":
+            folium.Marker(location=[emprendedora.latitud, emprendedora.longitud],
+            popup=f'''
+                    <h2>{emprendedora.nombre_emp} </h2>
+                    <p>{emprendedora.descripcion}</p>
+                    <p>celular:{emprendedora.contacto}</p>
+                ''').add_to(mapa)
+
+    mapa.save('templates/Educacion.html')
+    return render_template('Educacion.html')
+
+@app.route('/Cuidado_de_ninhos')
+def mapa_Cuidado_de_ninhos():
+    coor_mapa = [-25.301379182412745, -57.58094636564712]
+    coor_1 = [-25.301379182412745, -57.58094636564712]
+
+
+    #creación del mapa
+    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+
+    # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
+
+    emprendedoras = Emprendimientos.query.all()
+    for emprendedora in emprendedoras:
+        if emprendedora.rubro =="Cuidado_de_ninhos":
+            folium.Marker(location=[emprendedora.latitud, emprendedora.longitud],
+            popup=f'''
+                    <h2>{emprendedora.nombre_emp} </h2>
+                    <p>{emprendedora.descripcion}</p>
+                    <p>celular:{emprendedora.contacto}</p>
+                ''').add_to(mapa)
+
+    mapa.save('templates/Cuidado_de_ninhos.html')
+    return render_template('Cuidado_de_ninhos.html')
+
+@app.route('/Decoracion')
+def mapa_Decoracion():
+    coor_mapa = [-25.301379182412745, -57.58094636564712]
+    coor_1 = [-25.301379182412745, -57.58094636564712]
+
+
+    #creación del mapa
+    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+
+    # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
+
+    emprendedoras = Emprendimientos.query.all()
+    for emprendedora in emprendedoras:
+        if emprendedora.rubro =="Decoracion":
+            folium.Marker(location=[emprendedora.latitud, emprendedora.longitud],
+            popup=f'''
+                    <h2>{emprendedora.nombre_emp} </h2>
+                    <p>{emprendedora.descripcion}</p>
+                    <p>celular:{emprendedora.contacto}</p>
+                ''').add_to(mapa)
+
+    mapa.save('templates/Decoracion.html')
+    return render_template('Decoracion.html')
+
+@app.route('/Floricultura')
+def mapa_Floricultura():
+    coor_mapa = [-25.301379182412745, -57.58094636564712]
+    coor_1 = [-25.301379182412745, -57.58094636564712]
+
+
+    #creación del mapa
+    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+
+    # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
+
+    emprendedoras = Emprendimientos.query.all()
+    for emprendedora in emprendedoras:
+        if emprendedora.rubro =="Floricultura":
+            folium.Marker(location=[emprendedora.latitud, emprendedora.longitud],
+            popup=f'''
+                    <h2>{emprendedora.nombre_emp} </h2>
+                    <p>{emprendedora.descripcion}</p>
+                    <p>celular:{emprendedora.contacto}</p>
+                ''').add_to(mapa)
+
+    mapa.save('templates/Floricultura.html')
+    return render_template('Floricultura.html')
 
 @app.route("/crear_alianza")
 def crear_alianza():
