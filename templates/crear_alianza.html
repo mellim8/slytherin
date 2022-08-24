@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Alianza</title>
+  </head>
+  <body class="">
+    <header class="bg-purple-800">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10" aria-label="Top">
+        <div
+          class="w-full py-6 flex items-center justify-between border-b border-indigo-500 lg:border-none"
+        >
+          <div class="flex items-center">
+            <a
+              class="text-center text-purple-200"
+              href="http://www.ciudadmujer.gov.py/"
+            >
+              <img src="../static/logoaa.png" alt="logo" width="50" />
+            </a>
+            <div class="hidden ml-10 space-x-8 lg:block">
+              <a
+                href="/Alianzas"
+                class="text-base font-medium text-1xl text-purple-200 hover:text-purple-300"
+              >
+                Alianzas
+              </a>
+
+              <a
+                href="/mapa"
+                class="text-base font-medium text-1xl text-purple-200 hover:text-purple-300"
+              >
+                Mapa
+              </a>
+            </div>
+          </div>
+          <div class="ml-10 space-x-4">
+            <a
+              href="/index"
+              class="text-1xl inline-block bg-purple-200 py-2 px-4 border border-transparent rounded-md text-base font-medium text-purple-800 hover:bg-opacity-75"
+              >Inicio</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+    <h1 class="text-center text-purple-800 pt-6 text-2xl">
+      <b>Crear Nueva Alianza</b>
+    </h1>
+    <div class="px-8">
+      <form class="pt-6">
+        <div class="relative z-0 mb-6 w-full group">
+          <input
+            type="nombre"
+            name="nombre_de_emprendimiento"
+            id="nombre_de_emprendimiento"
+            class="block py-2.5 px-0 w-full text-sm text-purple-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
+            required=""
+          />
+          <label
+            for="nombre_de_emprendimiento"
+            class="peer-focus:font-medium absolute text-sm text-purple-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >Nombre de Emprendimiento</label
+          >
+        </div>
+        <div class="relative z-0 mb-6 w-full group">
+          <input
+            type="text"
+            name="rubro_de_emprendimiento"
+            id="rubro_de_emprendimiento"
+            class="block py-2.5 px-0 w-full text-sm text-purple-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
+            required=""
+          />
+          <label
+            for="rubro_de_emprendimiento"
+            class="peer-focus:font-medium absolute text-sm text-purple-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >Encargada del emprendimiento</label
+          >
+        </div>
+        <div class="relative z-0 mb-6 w-full group">
+          <input
+            type="text"
+            name="descripcion"
+            id="descripcion"
+            class="block py-2.5 px-0 w-full text-sm text-purple-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
+            required=""
+          />
+          <label
+            for="drescripcion"
+            class="peer-focus:font-medium absolute text-sm text-purple-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >Descripcion</label
+          >
+
+          <div class="pt-8" class="relative z-0 mb-6 w-full group">
+            <select
+              class="block appearance-none w-full bg-purple border border-purple-400 hover:border-purple-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-purple-900"
+            >
+              <option>Seleccione el tipo de Alianza</option>
+              <option>Producto</option>
+              <option>Servicio</option>
+              <option>Proveedor</option>
+              <option>Delivery</option>
+              <option>Pagos electronicos</option>
+            </select>
+            <div
+              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+            >
+              <svg
+                class="fill-current h-4 w-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <button
+          type="enviar"
+          class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
+        >
+          Enviar
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
