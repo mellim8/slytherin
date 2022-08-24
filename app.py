@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 import folium
 from folium import IFrame
 from folium.plugins import MarkerCluster
-import pandas as pd
+# import pandas as pd
 
 app = Flask(__name__)
 
