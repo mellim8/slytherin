@@ -106,6 +106,11 @@ def mapa():
 def alianza():
     return render_template ("alianza.html")
 
+@app.route("/vista_mapa")
+def alianza():
+    return render_template ("vista_mapa.html")
+
+
 
 if __name__ =='__main__':
     app.run(debug=True)
