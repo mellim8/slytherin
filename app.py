@@ -1,6 +1,10 @@
+import base64
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy 
 import folium
+from folium import IFrame
+from folium.plugins import MarkerCluster
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -87,15 +91,16 @@ def emprendimientos():
 
 
 
-@app.route("/Mapa")
+@app.route('/mapa')
 def mapa():
-    popup = '<b> Nombre del emprendimiento </b>'
-
-    lugar_del_emprendimiento = folium.Map(location=[-25.300894456479014, -57.58135401902809],zoom_start=16)
-
-    folium.Marker(location=[-25.300894456479014, -57.58135401902809],popup = popup).add_to(lugar_del_emprendimiento)
-
-    return lugar_del_emprendimiento._repr_html_()
+    #Inicializamos el mapa 
+    map= folium.Map(
+        location=[-25.360106678758992, -57.63123446013285],
+        zoom_start=13,
+        )
+    # cluster = MarkerCluster().add_to(map)
+# mapa de datos
+    return map._repr_html_()
 
 @app.route("/alianza")
 def alianza():
