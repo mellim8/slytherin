@@ -110,7 +110,9 @@ def mapa_belleza():
             popup=f'''
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
-                    <p>celular:{emprendedora.contacto}</p>
+                    <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
+                        <img src="logo-wasap.png" width="50" height="50">
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Belleza.html')
@@ -160,7 +162,9 @@ def mapa_Artesanias():
             popup=f'''
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
-                    <p>celular:{emprendedora.contacto}</p>
+                    <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
+                        <img src="logo-wasap.png" width="50" height="50">
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Artesanias.html')
@@ -184,7 +188,9 @@ def mapa_Prendas_de_vestir():
             popup=f'''
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
-                    <p>celular:{emprendedora.contacto}</p>
+                    <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
+                        <img src="logo-wasap.png" width="50" height="50">
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Prendas_de_vestir.html')
@@ -208,7 +214,9 @@ def mapa_Cuidado_de_ancianos():
             popup=f'''
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
-                    <p>celular:{emprendedora.contacto}</p>
+                    <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
+                        <img src="logo-wasap.png" width="50" height="50">
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Cuidado_de_ancianos.html')
@@ -232,7 +240,9 @@ def mapa_Trabajo_domestico():
             popup=f'''
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
-                    <p>celular:{emprendedora.contacto}</p>
+                    <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
+                        <img src="logo-wasap.png" width="50" height="50">
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Trabajo_domestico.html')
@@ -256,7 +266,9 @@ def mapa_Educacion():
             popup=f'''
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
-                    <p>celular:{emprendedora.contacto}</p>
+                   <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
+                        <img src="logo-wasap.png" width="50" height="50">
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Educacion.html')
@@ -280,7 +292,9 @@ def mapa_Cuidado_de_ninhos():
             popup=f'''
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
-                    <p>celular:{emprendedora.contacto}</p>
+                    <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
+                        <img src="logo-wasap.png" width="50" height="50">
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Cuidado_de_ninhos.html')
@@ -304,7 +318,9 @@ def mapa_Decoracion():
             popup=f'''
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
-                    <p>celular:{emprendedora.contacto}</p>
+                    <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
+                        <img src="logo-wasap.png" width="50" height="50">
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Decoracion.html')
@@ -328,7 +344,9 @@ def mapa_Floricultura():
             popup=f'''
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
-                    <p>celular:{emprendedora.contacto}</p>
+                    <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
+                        <img src="logo-wasap.png" width="50" height="50">
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Floricultura.html')
