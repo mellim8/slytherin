@@ -134,7 +134,9 @@ def mapa_Gastronomia():
             popup=f'''
                     <h2>{emprendedora.nombre_emp} </h2>
                     <p>{emprendedora.descripcion}</p>
-                    <p>celular:{emprendedora.contacto}</p>
+                    <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
+                        <img src="logo-wasap.png" width="50" height="50">
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Gastronomia.html')
