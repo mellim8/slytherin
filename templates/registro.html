@@ -35,7 +35,7 @@
             href="#"
             class="text-base font-medium text-1xl text-purple-200 hover:text-purple-300"
           >
-            Promociones
+            Alianzas
           </a>
 
           <a
@@ -48,7 +48,7 @@
       </div>
       <div class="ml-10 space-x-4">
         <a
-          href="http://127.0.0.1:5000/"
+          href="/"
           class="text-1xl inline-block bg-purple-200 py-2 px-4 border border-transparent rounded-md text-base font-medium text-purple-800 hover:bg-opacity-75"
           >Inicio</a
         >
@@ -57,6 +57,7 @@
   </nav>
 </header>
 <body class=" bg-fuchsia-100">
+
 <div class="px-36 py-9">
 <form class="space-y-8 divide-y divide-gray-200" action="/registro" method="POST" >
   <div class="space-y-8 divide-y divide-gray-200">
@@ -96,25 +97,42 @@
               <div class="sm:col-span-3">
                 <label for="nombre" class="block text-sm font-medium text-gray-700"> Nombre/s </label>
                 <div class="mt-1">
-                  <input type="text" name="nombre/s" id="nombre/s" autocomplete="given-name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                  <input type="text" name="nombre/s" id="nombre" autocomplete="given-name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                 </div>
               </div>
       
               <div class="sm:col-span-3">
                 <label for="apellido" class="block text-sm font-medium text-gray-700"> Apellido/s </label>
                 <div class="mt-1">
-                  <input type="text" name="apellido" id="apellido" autocomplete="family-name" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                  <input type="text" name="correo" id="correo" autocomplete="correo" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                 </div>
               </div>
-      
+              <div class="sm:col-span-2">
+                <label for="correo" class="block text-sm font-medium text-gray-700">Correo</label>
+                <div class="mt-1">
+                  <input type="text" name="correo" id="correo" autocomplete="correo" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                </div>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="contrasenha" class="block text-sm font-medium text-gray-700">Contraseña</label>
+                <div class="mt-1">
+                  <input type="text" name="contrasenha" id="contrasenha" autocomplete="contrasenha" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                </div>
+              </div>
+            </div>
               <div class="sm:col-span-4">
                 <label for="numero_de_telefono" class="block text-sm font-medium text-gray-700">Numero de telefono/whatsapp </label>
                 <div class="mt-1">
                   <input id="numero_de_telefono" name="numero_de_telefono" type="text" autocomplete="numero_de_telefono" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                 </div>
               </div>
-      
+            </div>
+            <div class="sm:col-span-6">
+              <label for="rubro" class="block text-sm font-medium text-gray-700"> Rubro </label>
+              <div class="mt-1">
+                <input type="text" name="rubro" id="rubro" autocomplete="rubro" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
               </div>
+            </div>
       
               <div class="sm:col-span-6">
                 <label for="direccion" class="block text-sm font-medium text-gray-700"> Direccion/calle </label>
@@ -141,14 +159,14 @@
                 <div class="mt-1">
                   <input type="text" name="longitud" id="longitud" autocomplete="longitud" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
                 </div>
-              </div>
             </div>
           </div>
+        </div>
       
           
-        </div>
+      </div>
 
-        <div id="map"></div>
+          <div id="map"></div>
 
         <div class="pt-5">
           <div class="flex justify-end">
@@ -191,4 +209,5 @@
   <p></p>
 </footer>
 </body>
+
 </html>

@@ -1,6 +1,10 @@
+import base64
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy 
 import folium
+from folium import IFrame
+from folium.plugins import MarkerCluster
+# import pandas as pd
 
 app = Flask(__name__)
 
@@ -25,21 +29,26 @@ class Emprendimientos(db.Model):
   apellido = db.Column(db.String(80), nullable=False)
   contacto = db.Column(db.String(10), nullable=False)
   direccion = db.Column(db.String(200), nullable=False)
+  rubro = db.Column(db.String(200), nullable=False)
   ciudad = db.Column(db.String(10), nullable=False)
   latitud = db.Column(db.Float(200), nullable=False)
   longitud = db.Column(db.Float(200), nullable=False)
+  correo = db.Column(db.String(200), nullable=False)
+  contrasenha = db.Column(db.String(80), nullable=False)
 
-  def __init__(self, nombre_emp, descripcion, nombre, apellido, contacto, direccion, ciudad, latitud, longitud):
+  def __init__(self, nombre_emp, descripcion, nombre, apellido, contacto, direccion, rubro, ciudad, latitud, longitud, correo, contrasenha):
     self.nombre_emp = nombre_emp
     self.descripcion = descripcion
     self.nombre = nombre
     self.apellido = apellido
     self.contacto = contacto
     self.direccion = direccion
+    self.rubro = rubro
     self.ciudad = ciudad
     self.latitud = latitud
     self.longitud = longitud
-    
+    self.correo = correo
+    self.contrasenha = contrasenha
 
 @app.route('/registro', methods=['GET','POST'])
 def registro():
@@ -48,15 +57,19 @@ def registro():
         print(request.form)
         nombre_emp = request.form['nombre']
         descripcion = request.form['about']
-        nombre = request.form['nombre/s']
+        nombre = request.form['nombre']
         apellido = request.form['apellido']
         contacto = request.form['numero_de_telefono']
         direccion = request.form['direccion']
+        rubro = request.form['rubro']
         ciudad = request.form['ciudad']
         latitud = request.form['latitud']
         longitud = request.form['longitud']
+        correo = request.form['correo']
+        contrasenha = request.form['contrasenha']
 
-        emprendimientos = Emprendimientos(nombre_emp, descripcion, nombre, apellido, contacto, direccion, ciudad, latitud, longitud)
+
+        emprendimientos = Emprendimientos(nombre_emp, descripcion, nombre, apellido, contacto, direccion, rubro, ciudad, latitud, longitud, correo, contrasenha)
         db.session.add(emprendimientos)
         db.session.commit()
 
@@ -81,19 +94,71 @@ def emprendimientos():
 
 
 
-@app.route("/Mapa")
+@app.route('/map')
 def mapa():
-    popup = '<b> Nombre del emprendimiento </b>'
+    #Inicializamos el mapa 
+    # map= folium.Map(
+    #     location=[-25.360106678758992, -57.63123446013285],
+    #     zoom_start=13,
+    #     )
+    # cluster = MarkerCluster().add_to(map)
+    # mapa de datos
+    #variables de coordenadas
+    coor_mapa = [-25.301379182412745, -57.58094636564712]
+    coor_1 = [-25.301379182412745, -57.58094636564712]
 
-    lugar_del_emprendimiento = folium.Map(location=[-25.300894456479014, -57.58135401902809],zoom_start=16)
 
-    folium.Marker(location=[-25.300894456479014, -57.58135401902809],popup = popup).add_to(lugar_del_emprendimiento)
+    #creación del mapa
+    mapa = folium.Map(location=coor_mapa,zoom_start=12)
 
-    return lugar_del_emprendimiento._repr_html_()
+    emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
 
-@app.route("/alianza")
-def alianza():
-    return render_template ("alianza.html")
+    emprendedoras = Emprendimientos.query.all()
+    for emprendedora in emprendedoras:
+        folium.Marker(location=[emprendedora.latitud, emprendedora.longitud],
+        popup=f'''
+                <h2>{emprendedora.nombre}</h2>
+                <p>{emprendedora.descripcion}</p>
+                <p>celular:{emprendedora.contacto}</p>
+            ''').add_to(mapa)
+
+    # folium.Marker(
+    #     location=coor_1,
+    #     popup='''
+    #             <h2>Emprendedora A</h2>
+    #             <hr>
+    #             <img src="static/food.jpg" width="250px">
+    #             <p> La comida mas rica del mundo</p>
+    #             <h3>Servicios:</h3>
+    #                 <ul>
+    #                     <li>lomito, con carne.</li>
+    #                     <li>chipita, con cocido.</li>
+    #                 </ul>
+    #             <hr>
+    #                 <a href="#">whatsApp</a>
+
+
+    #             ''',
+    #     tooltip="Emprendedora A",
+    #     icon=emprenIcon
+    #     ).add_to(mapa)
+  #se puede usar despues de la ,Icom y dentro del html se puede hacer de todo,trabaja con "boostran"
+    #guardamos el mapa en un archivo html
+    mapa.save('templates/map.html')
+    return render_template('map.html')
+
+@app.route("/crear_alianza")
+def crear_alianza():
+    return render_template ("crear_alianza.html")
+
+@app.route("/alianzas")
+def alianzas():
+    return render_template ("Alianzas.html")
+
+@app.route("/vista_mapa")
+def vista_mapa():
+    return render_template ("vista_mapa.html")
+
 
 
 if __name__ =='__main__':
