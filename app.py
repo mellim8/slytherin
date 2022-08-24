@@ -29,19 +29,21 @@ class Emprendimientos(db.Model):
   apellido = db.Column(db.String(80), nullable=False)
   contacto = db.Column(db.String(10), nullable=False)
   direccion = db.Column(db.String(200), nullable=False)
+  rubro = db.Column(db.String(200), nullable=False)
   ciudad = db.Column(db.String(10), nullable=False)
   latitud = db.Column(db.Float(200), nullable=False)
   longitud = db.Column(db.Float(200), nullable=False)
   correo = db.Column(db.String(200), nullable=False)
   contrasenha = db.Column(db.String(80), nullable=False)
 
-  def __init__(self, nombre_emp, descripcion, nombre, apellido, contacto, direccion, ciudad, latitud, longitud, correo, contrasenha):
+  def __init__(self, nombre_emp, descripcion, nombre, apellido, contacto, direccion, rubro, ciudad, latitud, longitud, correo, contrasenha):
     self.nombre_emp = nombre_emp
     self.descripcion = descripcion
     self.nombre = nombre
     self.apellido = apellido
     self.contacto = contacto
     self.direccion = direccion
+    self.rubro = rubro
     self.ciudad = ciudad
     self.latitud = latitud
     self.longitud = longitud
@@ -55,10 +57,11 @@ def registro():
         print(request.form)
         nombre_emp = request.form['nombre']
         descripcion = request.form['about']
-        nombre = request.form['nombre/s']
+        nombre = request.form['nombre']
         apellido = request.form['apellido']
         contacto = request.form['numero_de_telefono']
         direccion = request.form['direccion']
+        rubro = request.form['rubro']
         ciudad = request.form['ciudad']
         latitud = request.form['latitud']
         longitud = request.form['longitud']
@@ -66,7 +69,7 @@ def registro():
         contrasenha = request.form['contrasenha']
 
 
-        emprendimientos = Emprendimientos(nombre_emp, descripcion, nombre, apellido, contacto, direccion, ciudad, latitud, longitud, correo, contrasenha)
+        emprendimientos = Emprendimientos(nombre_emp, descripcion, nombre, apellido, contacto, direccion, rubro, ciudad, latitud, longitud, correo, contrasenha)
         db.session.add(emprendimientos)
         db.session.commit()
 
