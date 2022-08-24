@@ -113,7 +113,11 @@ def mapa_belleza():
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a href="/crear_alianza">Crear una nueva Alianza</a>
+                    <a href="/crear_alianza.html">
+                    <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                    Crear Alianza
+                    </button>
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Belleza.html')
@@ -140,7 +144,11 @@ def mapa_Gastronomia():
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a></a>
+                    <a href="/crear_alianza.html">
+                    <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                    Crear Alianza
+                    </button>
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Gastronomia.html')
@@ -167,7 +175,11 @@ def mapa_Artesanias():
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a></a>
+                    <a href="/crear_alianza.html">
+                    <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                    Crear Alianza
+                    </button>
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Artesanias.html')
@@ -194,7 +206,11 @@ def mapa_Prendas_de_vestir():
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a></a>
+                    <a href="/crear_alianza.html">
+                    <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                    Crear Alianza
+                    </button>
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Prendas_de_vestir.html')
@@ -221,7 +237,11 @@ def mapa_Cuidado_de_ancianos():
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a></a>
+                    <a href="/crear_alianza.html">
+                    <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                    Crear Alianza
+                    </button>
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Cuidado_de_ancianos.html')
@@ -248,7 +268,11 @@ def mapa_Trabajo_domestico():
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a></a>
+                    <a href="/crear_alianza.html">
+                    <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                    Crear Alianza
+                    </button>
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Trabajo_domestico.html')
@@ -275,7 +299,11 @@ def mapa_Educacion():
                    <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a></a>
+                    <a href="/crear_alianza.html">
+                    <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                    Crear Alianza
+                    </button>
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Educacion.html')
@@ -302,7 +330,11 @@ def mapa_Cuidado_de_ninhos():
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a></a>
+                    <a href="/crear_alianza.html">
+                    <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                    Crear Alianza
+                    </button>
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Cuidado_de_ninhos.html')
@@ -329,7 +361,11 @@ def mapa_Decoracion():
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a></a>
+                    <a href="/crear_alianza.html">
+                    <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                    Crear Alianza
+                    </button>
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Decoracion.html')
@@ -356,7 +392,11 @@ def mapa_Floricultura():
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a></a>
+                    <a href="/crear_alianza.html">
+                    <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                    Crear Alianza
+                    </button>
+                    </a>
                 ''').add_to(mapa)
 
     mapa.save('templates/Floricultura.html')
