@@ -99,7 +99,7 @@ def mapa_belleza():
 
 
     #creación del mapa
-    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+    mapa = folium.Map(location=coor_mapa,zoom_start=15)
 
     # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
 
@@ -113,7 +113,7 @@ def mapa_belleza():
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a href="/crear_alianza.html">
+                    <a href="/crear_alianza" target="_blank">
                     <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                     Crear Alianza
                     </button>
@@ -130,7 +130,7 @@ def mapa_Gastronomia():
 
 
     #creación del mapa
-    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+    mapa = folium.Map(location=coor_mapa,zoom_start=15)
 
     # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
 
@@ -144,7 +144,7 @@ def mapa_Gastronomia():
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a href="/crear_alianza.html">
+                    <a href="/crear_alianza" target="_blank">
                     <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                     Crear Alianza
                     </button>
@@ -161,7 +161,7 @@ def mapa_Artesanias():
 
 
     #creación del mapa
-    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+    mapa = folium.Map(location=coor_mapa,zoom_start=15)
 
     # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
 
@@ -175,7 +175,7 @@ def mapa_Artesanias():
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a href="/crear_alianza.html">
+                    <a href="/crear_alianza" target="_blank">
                     <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                     Crear Alianza
                     </button>
@@ -192,7 +192,7 @@ def mapa_Prendas_de_vestir():
 
 
     #creación del mapa
-    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+    mapa = folium.Map(location=coor_mapa,zoom_start=15)
 
     # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
 
@@ -206,7 +206,7 @@ def mapa_Prendas_de_vestir():
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a href="/crear_alianza.html">
+                    <a href="/crear_alianza" target="_blank">
                     <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                     Crear Alianza
                     </button>
@@ -223,7 +223,7 @@ def mapa_Cuidado_de_ancianos():
 
 
     #creación del mapa
-    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+    mapa = folium.Map(location=coor_mapa,zoom_start=15)
 
     # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
 
@@ -237,7 +237,7 @@ def mapa_Cuidado_de_ancianos():
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a href="/crear_alianza.html">
+                    <a href="/crear_alianza" target="_blank">
                     <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                     Crear Alianza
                     </button>
@@ -254,7 +254,7 @@ def mapa_Trabajo_domestico():
 
 
     #creación del mapa
-    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+    mapa = folium.Map(location=coor_mapa,zoom_start=15)
 
     # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
 
@@ -268,7 +268,7 @@ def mapa_Trabajo_domestico():
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a href="/crear_alianza.html">
+                    <a href="/crear_alianza" target="_blank">
                     <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                     Crear Alianza
                     </button>
@@ -285,7 +285,7 @@ def mapa_Educacion():
 
 
     #creación del mapa
-    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+    mapa = folium.Map(location=coor_mapa,zoom_start=15)
 
     # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
 
@@ -299,7 +299,7 @@ def mapa_Educacion():
                    <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a href="/crear_alianza.html">
+                    <a href="/crear_alianza" target="_blank">
                     <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                     Crear Alianza
                     </button>
@@ -316,7 +316,7 @@ def mapa_Cuidado_de_ninhos():
 
 
     #creación del mapa
-    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+    mapa = folium.Map(location=coor_mapa,zoom_start=15)
 
     # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
 
@@ -330,7 +330,7 @@ def mapa_Cuidado_de_ninhos():
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a href="/crear_alianza.html">
+                    <a href="/crear_alianza">
                     <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                     Crear Alianza
                     </button>
@@ -347,7 +347,7 @@ def mapa_Decoracion():
 
 
     #creación del mapa
-    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+    mapa = folium.Map(location=coor_mapa,zoom_start=15)
 
     # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
 
@@ -361,7 +361,7 @@ def mapa_Decoracion():
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a href="/crear_alianza.html">
+                    <a href="/crear_alianza">
                     <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                     Crear Alianza
                     </button>
@@ -378,7 +378,7 @@ def mapa_Floricultura():
 
 
     #creación del mapa
-    mapa = folium.Map(location=coor_mapa,zoom_start=18)
+    mapa = folium.Map(location=coor_mapa,zoom_start=15)
 
     # emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
 
@@ -392,7 +392,7 @@ def mapa_Floricultura():
                     <a href="https://wa.me/595{emprendedora.contacto}/?" target="_blank">
                         <img src="static/logo-wasap.png" width="50" height="50">
                     </a>
-                    <a href="/crear_alianza.html">
+                    <a href="/crear_alianza" target="_blank">
                     <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                     Crear Alianza
                     </button>
@@ -404,6 +404,7 @@ def mapa_Floricultura():
 
 @app.route("/crear_alianza")
 def crear_alianza():
+    # emprendimiento = Emprendimientos.query.filter_by(id=id).first()
     return render_template ("crear_alianza.html")
 
 @app.route("/alianzas")

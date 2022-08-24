@@ -23,7 +23,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_26be1db23950f17365a6adb3f9da04f8 {
+                #map_1aa0329beb67ece886a6680b7bee4664 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -35,17 +35,17 @@
 </head>
 <body>    
     
-            <div class="folium-map" id="map_26be1db23950f17365a6adb3f9da04f8" ></div>
+            <div class="folium-map" id="map_1aa0329beb67ece886a6680b7bee4664" ></div>
         
 </body>
 <script>    
     
-            var map_26be1db23950f17365a6adb3f9da04f8 = L.map(
-                "map_26be1db23950f17365a6adb3f9da04f8",
+            var map_1aa0329beb67ece886a6680b7bee4664 = L.map(
+                "map_1aa0329beb67ece886a6680b7bee4664",
                 {
                     center: [-25.301379182412745, -57.58094636564712],
                     crs: L.CRS.EPSG3857,
-                    zoom: 18,
+                    zoom: 15,
                     zoomControl: true,
                     preferCanvas: false,
                 }
@@ -55,9 +55,28 @@
 
         
     
-            var tile_layer_977b8ad00788245b46da9e50d694e97e = L.tileLayer(
+            var tile_layer_1bea4ffabaa46b97e21304832f8d028d = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_26be1db23950f17365a6adb3f9da04f8);
+            ).addTo(map_1aa0329beb67ece886a6680b7bee4664);
         
+    
+            var marker_10ba309dfcfeba7ac15acc26dab3de06 = L.marker(
+                [-25.299562115190646, -57.58142602469889],
+                {}
+            ).addTo(map_1aa0329beb67ece886a6680b7bee4664);
+        
+    
+        var popup_c8a244f195f0309230ce3c3ad0211992 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d5af2504d93cd8a8d42344698b5d409d = $(`<div id="html_d5af2504d93cd8a8d42344698b5d409d" style="width: 100.0%; height: 100.0%;">                     <h2>Heladeria Paris </h2>                     <p>helados</p>                     <a href="https://wa.me/59565464654/?" target="_blank">                         <img src="static/logo-wasap.png" width="50" height="50">                     </a>                     <a href="/crear_alianza" target="_blank">                     <button type="button" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">                     Crear Alianza                     </button>                     </a>                 </div>`)[0];
+            popup_c8a244f195f0309230ce3c3ad0211992.setContent(html_d5af2504d93cd8a8d42344698b5d409d);
+        
+
+        marker_10ba309dfcfeba7ac15acc26dab3de06.bindPopup(popup_c8a244f195f0309230ce3c3ad0211992)
+        ;
+
+        
+    
 </script>
