@@ -1,6 +1,10 @@
+import base64
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy 
 import folium
+from folium import IFrame
+from folium.plugins import MarkerCluster
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -28,8 +32,10 @@ class Emprendimientos(db.Model):
   ciudad = db.Column(db.String(10), nullable=False)
   latitud = db.Column(db.Float(200), nullable=False)
   longitud = db.Column(db.Float(200), nullable=False)
+  correo = db.Column(db.String(200), nullable=False)
+  contrasenha = db.Column(db.String(80), nullable=False)
 
-  def __init__(self, nombre_emp, descripcion, nombre, apellido, contacto, direccion, ciudad, latitud, longitud):
+  def __init__(self, nombre_emp, descripcion, nombre, apellido, contacto, direccion, ciudad, latitud, longitud, correo, contrasenha):
     self.nombre_emp = nombre_emp
     self.descripcion = descripcion
     self.nombre = nombre
@@ -39,7 +45,8 @@ class Emprendimientos(db.Model):
     self.ciudad = ciudad
     self.latitud = latitud
     self.longitud = longitud
-    
+    self.correo = correo
+    self.contrasenha = contrasenha
 
 @app.route('/registro', methods=['GET','POST'])
 def registro():
@@ -55,8 +62,11 @@ def registro():
         ciudad = request.form['ciudad']
         latitud = request.form['latitud']
         longitud = request.form['longitud']
+        correo = request.form['correo']
+        contrasenha = request.form['contrasenha']
 
-        emprendimientos = Emprendimientos(nombre_emp, descripcion, nombre, apellido, contacto, direccion, ciudad, latitud, longitud)
+
+        emprendimientos = Emprendimientos(nombre_emp, descripcion, nombre, apellido, contacto, direccion, ciudad, latitud, longitud, correo, contrasenha)
         db.session.add(emprendimientos)
         db.session.commit()
 
@@ -81,19 +91,29 @@ def emprendimientos():
 
 
 
-@app.route("/Mapa")
+@app.route('/mapa')
 def mapa():
-    popup = '<b> Nombre del emprendimiento </b>'
+    #Inicializamos el mapa 
+    map= folium.Map(
+        location=[-25.360106678758992, -57.63123446013285],
+        zoom_start=13,
+        )
+    # cluster = MarkerCluster().add_to(map)
+# mapa de datos
+    return map._repr_html_()
 
-    lugar_del_emprendimiento = folium.Map(location=[-25.300894456479014, -57.58135401902809],zoom_start=16)
-
-    folium.Marker(location=[-25.300894456479014, -57.58135401902809],popup = popup).add_to(lugar_del_emprendimiento)
-
-    return lugar_del_emprendimiento._repr_html_()
-
-@app.route("/alianza")
+@app.route("/crear_alianza")
 def alianza():
-    return render_template ("alianza.html")
+    return render_template ("crear_alianza.html")
+
+@app.route("/alianzas")
+def alianza():
+    return render_template ("Alianzas.html")
+
+@app.route("/vista_mapa")
+def alianza():
+    return render_template ("vista_mapa.html")
+
 
 
 if __name__ =='__main__':
