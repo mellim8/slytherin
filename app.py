@@ -91,27 +91,69 @@ def emprendimientos():
 
 
 
-@app.route('/mapa')
+@app.route('/map')
 def mapa():
     #Inicializamos el mapa 
-    map= folium.Map(
-        location=[-25.360106678758992, -57.63123446013285],
-        zoom_start=13,
-        )
+    # map= folium.Map(
+    #     location=[-25.360106678758992, -57.63123446013285],
+    #     zoom_start=13,
+    #     )
     # cluster = MarkerCluster().add_to(map)
-# mapa de datos
-    return map._repr_html_()
+    # mapa de datos
+    #variables de coordenadas
+    coor_mapa = [-25.301379182412745, -57.58094636564712]
+    coor_1 = [-25.301379182412745, -57.58094636564712]
+
+
+    #creación del mapa
+    mapa = folium.Map(location=coor_mapa,zoom_start=12)
+
+    emprenIcon=folium.features.CustomIcon("static/mujerico.png",icon_size=(50,50))
+
+    emprendedoras = Emprendimientos.query.all()
+    for emprendedora in emprendedoras:
+        folium.Marker(location=[emprendedora.latitud, emprendedora.longitud],
+        popup=f'''
+                <h2>{emprendedora.nombre}</h2>
+                <p>{emprendedora.descripcion}</p>
+                <p>celular:{emprendedora.contacto}</p>
+            ''').add_to(mapa)
+
+    # folium.Marker(
+    #     location=coor_1,
+    #     popup='''
+    #             <h2>Emprendedora A</h2>
+    #             <hr>
+    #             <img src="static/food.jpg" width="250px">
+    #             <p> La comida mas rica del mundo</p>
+    #             <h3>Servicios:</h3>
+    #                 <ul>
+    #                     <li>lomito, con carne.</li>
+    #                     <li>chipita, con cocido.</li>
+    #                 </ul>
+    #             <hr>
+    #                 <a href="#">whatsApp</a>
+
+
+    #             ''',
+    #     tooltip="Emprendedora A",
+    #     icon=emprenIcon
+    #     ).add_to(mapa)
+  #se puede usar despues de la ,Icom y dentro del html se puede hacer de todo,trabaja con "boostran"
+    #guardamos el mapa en un archivo html
+    mapa.save('templates/map.html')
+    return render_template('map.html')
 
 @app.route("/crear_alianza")
-def alianza():
+def crear_alianza():
     return render_template ("crear_alianza.html")
 
 @app.route("/alianzas")
-def alianza():
+def alianzas():
     return render_template ("Alianzas.html")
 
 @app.route("/vista_mapa")
-def alianza():
+def vista_mapa():
     return render_template ("vista_mapa.html")
 
 
